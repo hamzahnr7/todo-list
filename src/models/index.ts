@@ -1,18 +1,12 @@
 import { DataTypes, Sequelize } from 'sequelize';
 import databaseConfig from '../config/database.config';
-import { Task, taskModel } from './task';
-// import { Comment, commentModel } from './comment.model';
-// import { Post, postModel } from './post.model';
-// import { User, userModel } from './user.model';
+import { Task, taskModel } from './task.model';
 
 const env = process.env.NODE_ENV! || 'development';
 const config = databaseConfig[env as keyof typeof databaseConfig];
 
 export interface Models {
   Task: typeof Task;
-  // User: typeof User;
-  // Post: typeof Post;
-  // Comment: typeof Comment;
 }
 type ModelsKeys = keyof Models;
 
@@ -22,8 +16,6 @@ let sequelize: Sequelize = config.url
 
 const models: Models = {
   Task: taskModel(sequelize, DataTypes),
-  // Post: postModel(sequelize, DataTypes),
-  // Comment: commentModel(sequelize, DataTypes),
 };
 
 Object.keys(models).forEach((modelName) => {

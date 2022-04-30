@@ -1,4 +1,4 @@
-import { Sequelize, Model, DataTypes } from "sequelize";
+import { Sequelize, Model, DataTypes, CreationOptional } from "sequelize";
 import { Models } from ".";
 
 export class Task extends Model {
@@ -7,7 +7,20 @@ export class Task extends Model {
    * This method is not a part of Sequelize lifecycle.
    * The `models/index` file will call this method automatically.
    */
-  static associate(models:Models) {
+
+  declare id: CreationOptional<Number>;
+  declare title: String;
+  declare description: String;
+  declare status: String;
+  declare dueDate: Date;
+
+  //Timestamp
+  // createdAt can be undefined during creation
+  declare createdAt?: CreationOptional<Date>;
+  // updatedAt can be undefined during creation
+  declare updatedAt?: CreationOptional<Date>;
+
+  static associate(models: Models) {
     // define association here
   }
 }
