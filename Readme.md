@@ -14,10 +14,10 @@ Restructure semua kedalam folder src lalu ganti project tersebut menjadi TS. Unt
 
 ## Berikut tugas yang perlu dilakukan:
 
-- [Phase 1](./phase_1.md)
-- [Phase 2](./phase_2.md)
-- [Phase 3](./phase_3.md)
-- [Phase 4](./phase_4.md)
+- [Phase 1](./task/phase_1.md)
+- [Phase 2](./task/phase_2.md)
+- [Phase 3](./task/phase_3.md)
+- [Phase 4](./task/phase_4.md)
 
 #### Catatan:
 
